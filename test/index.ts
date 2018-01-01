@@ -159,4 +159,15 @@ describe( "Tax / Family", function() {
         } );
     } );
 
+    it( "should calculate taxes for public health insurance", function( done ) {
+        const {
+          incomeTax: incomeTaxAfterDeduction,
+          solidarityTax: solidarityTaxAfterDeduction
+        } = tax(100000 * (1 - 0.236), Year.Y2018);
+        tax(100000, Year.Y2018, { publicHealthInsurance: true }).should.deep.equal( {
+          incomeTax : incomeTaxAfterDeduction,
+          solidarityTax : solidarityTaxAfterDeduction
+        });
+        done();
+    } );
 } );

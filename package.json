@@ -45,5 +45,8 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:drinchev/german-income-tax.git"
+  },
+  "dependencies": {
+    "jsonexport": "^2.1.0"
   }
 }
